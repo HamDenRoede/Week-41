@@ -1,26 +1,41 @@
-public class Main
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.ArrayList;
+
+    public class Main<numberOfFloors>
+
 {
+
+
     public static void main(String[] args)
     {
-        //psvm + tab
-        //this is our new "void setup / void draw"
-
-        Driver driver1 = new Driver("Jonas", 28);
-        Car car1 = new Car ("Ford", "Focus", "2018", "Sedan");
-        car1.setDriver(driver1);
-
-        Car car2 = new Car ("Lamborghini", "Aventador", "2012", "Convertible");
-        car2.setDriver(driver1);
-
-        //sout +  tap = print
-
-        //System.out.println(car1);  // How to print on seperate lines
-        //System.out.println(car1.getDriver().toString());
-        System.out.println(car1.toString() + " "+ driver1.toString()); // <-- how to print on 1 line
+    Room room1 = new Room(4, 1, 6, 10);
+    Room room2 = new Room(5, 2, 8, 14);
+    Room room3 = new Room(6, 2, 12, 16);
 
 
-        //System.out.println(car2);
-        //System.out.println(car2.getDriver().toString());
-        System.out.println(car2.toString() + " "+ driver1.toString());
+    //I need to make turn these 3 rooms into a collection - Arrays perhaps
+    ArrayList<Room> rooms = new ArrayList<Room>();
+    rooms.add(room1);
+    rooms.add(room2);
+    rooms.add(room3);
+
+
+    Building building1 = new Building(rooms,2,2,true);
+
+
+
+
+        System.out.println("Total number of lamps= "room1.getNumberOfLamps() + room2.getNumberOfLamps() + room3.getNumberOfLamps());
+
+    }
+
+    //Stuck on this point. Need to figure out how if statements work in intellij
+    //I probably need to use the boolean in the Building class
+    int numberOfFloors = 2;
+        if (numberOfFloors > rooms)
+
+    {
+        System.out.println("This is an odd building.");
     }
 }
